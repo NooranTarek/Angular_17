@@ -14,6 +14,7 @@ import { CartServiceService } from '../services/cart-service.service.js';
 })
 export class ProductsDetailsComponent {
   products: any[] = [];
+  searchTerm: string = '';
 
   constructor(private productsService: ProductsServiceService) {}
 
@@ -27,9 +28,10 @@ export class ProductsDetailsComponent {
         console.error('Error fetching products:', error);
       }
     );
-
-
   }
+
+
+
 
 }
   /* products !: Array<Product>;

@@ -13,6 +13,15 @@ export class CartServiceService {
   private cartItemsSubject = new BehaviorSubject<any[]>([]);
   cartItems$ = this.cartItemsSubject.asObservable();
   
+  public updateCartCount() {
+    const currentCartItems = this.cartItemsSubject.value;
+    const totalCount = currentCartItems.reduce(
+      (acc, item) => acc + item.quantity,
+      0
+    );
+    this.cartCountSubject.next(totalCount);
+  }
+
 
   incrementCartCount() {
     const currentCount = this.cartCountSubject.value;
@@ -30,16 +39,19 @@ export class CartServiceService {
         existingItem.quantity = newQuantity;
       } else {
         existingItem.quantity = existingItem.stock;
-        console.warn(`Stock limit reached`);
       }
       existingItem.price = existingItem.quantity * existingItem.price;
       this.cartItemsSubject.next([...currentCartItems]);
+      this.updateCartCount();
+
     } else {
       const updatedCartItems = [
         ...currentCartItems,
         { ...product, quantity: 1 },
       ];
       this.cartItemsSubject.next(updatedCartItems);
+      this.updateCartCount();
+
     }
     console.log(this.cartItems$);
 
@@ -51,6 +63,8 @@ export class CartServiceService {
       (item) => item.id !== product.id
     );
     this.cartItemsSubject.next(updatedCartItems);
+    this.updateCartCount();
+
   }
 
 

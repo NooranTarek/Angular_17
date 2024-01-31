@@ -5,8 +5,8 @@
         <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
           <h5 class="brand-name">NourMarkito</h5>
         </div>
-        <div class=" search col-md-5 my-auto">
-          <form role="search">
+        <div class="search col-md-5 my-auto">
+          <form role="search" >
             <div class="input-group">
               <input
                 type="search"
@@ -19,16 +19,12 @@
             </div>
           </form>
         </div>
+        
         <div class="col-md-5 my-auto">
           <ul class="nav justify-content-end">
             <li class="nav-item">
               <a class="nav-link" routerLink="/shoppingCart" routerLinkActive="active_link">
                 <i class="fa fa-shopping-cart"></i> Cart ({{ cartService.cartCount$ | async }})
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa fa-heart"></i> Wishlist (0)
               </a>
             </li>
             <li class="nav-item">
@@ -38,7 +34,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/register" routerLinkActive="active_link">
-                 Register
+                 Login
               </a>
             </li>
           </ul>
@@ -65,25 +61,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link"  routerLink="/" routerLinkActive="active_link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  routerLink="/smartphones" routerLinkActive="active_link">smartphones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"   routerLink="/laptops" routerLinkActive="active_link">laptops</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"   routerLink="/skincare" routerLinkActive="active_link">fragrances</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"   routerLink="/fragrancest" routerLinkActive="active_link">skincare</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"   routerLink="/homeDecoration" routerLinkActive="active_link">home-decoration</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"   routerLink="/groceries" routerLinkActive="active_link">groceries</a>
+            <a class="nav-link"  routerLink="/" routerLinkActive="active_link" style="margin-left: 300px;">Home</a>
           </li>
         </ul>
       </div>
