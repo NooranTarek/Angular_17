@@ -1,0 +1,92 @@
+<div class="main-navbar shadow-sm sticky-top">
+  <div class="top-navbar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+          <h5 class="brand-name">NourMarkito</h5>
+        </div>
+        <div class=" search col-md-5 my-auto">
+          <form role="search">
+            <div class="input-group">
+              <input
+                type="search"
+                placeholder="Search your product"
+                class="form-control"
+              />
+              <button class="btn bg-white" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-5 my-auto">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/shoppingCart" routerLinkActive="active_link">
+                <i class="fa fa-shopping-cart"></i> Cart ({{ cartService.cartCount$ | async }})
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-heart"></i> Wishlist (0)
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login" routerLinkActive="active_link">
+                LogIn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/register" routerLinkActive="active_link">
+                 Register
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-xl">
+    <div class="container-fluid">
+      <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
+        Funda Ecom
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/" routerLinkActive="active_link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/smartphones" routerLinkActive="active_link">smartphones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink="/laptops" routerLinkActive="active_link">laptops</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink="/skincare" routerLinkActive="active_link">fragrances</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink="/fragrancest" routerLinkActive="active_link">skincare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink="/homeDecoration" routerLinkActive="active_link">home-decoration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink="/groceries" routerLinkActive="active_link">groceries</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,25 @@
+  <div class="product-card">
+    <div class="product-card-img">
+        @if(productItem.stock==0){
+            <label class="stock " style="  background-color: rgb(192, 5, 130);">Out of Stock</label>
+        } @else {
+            <label class="stock ">In Stock</label>
+        }
+      <img [src]="productItem.images && productItem.images[1] ? productItem.images[1] : 'https://gagadget.com/media/post_big/Samsung_Galaxy_S22.png'" alt="no image" />
+    </div>
+    <div class="product-card-body">
+      <p class="product-brand">{{ productItem.brand }}</p>
+      <h5 class="product-name">
+         {{ productItem.title }} 
+      </h5>
+      <div>
+        <span class="selling-price">{{ productItem.discountPercentage }} </span>
+        <span class="original-price">{{ productItem.price }}</span>
+      </div>
+      <div class="mt-2">
+        <a (click)="addToCart(productItem)" class="btn btn1">Add To Cart</a>
+        <a href="" class="btn btn1"> <i class="fa fa-heart"></i> </a>
+        <button class="btn btn1" (click)="redirectToDetails(productItem.id)"> View details</button>
+      </div>
+    </div>
+  </div>
